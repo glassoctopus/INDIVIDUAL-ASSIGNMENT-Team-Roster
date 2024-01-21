@@ -1,0 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap';
+import { useAuth } from '../utils/context/authContext';
+import { getMembers } from '../api/memberData';
+// import MemberCard from '../components/MemberCard';
+
+function Home() {
+  const [members, setMembers] = useState([]);
+
+  // TODO: Get user ID using useAuth Hook
+  const { user } = useAuth();
+
+  const getAllTheMembers = () => {
+    getMembers(user.uid).then((MembersData) => {
+      setMembers(MembersData);
+    });
+  };
+
+  // TODO: make the call to the API to get all the members on component render
+  useEffect(() => {
+    getAllTheMembers();
+  }, []);
+
+  return (
+    <div className="text-center my-4">
+      <h1>Team</h1>
+      <Link href="/new" passHref>
+        <Button>Add An Member</Button>
+      </Link>
+      <h2>{members ? 'Members loaded' : 'No Members'}</h2>
+    </div>
+  );
+}
+
+export default Home;
