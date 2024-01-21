@@ -27,7 +27,7 @@ function Home() {
     <div className="text-center my-4">
       <h1>Team</h1>
       <Link href="/new" passHref>
-        <Button>Add An Member</Button>
+        <Button>Add A Member</Button>
       </Link>
       <h2>{members ? 'Members loaded' : 'No Members'}</h2>
     </div>
