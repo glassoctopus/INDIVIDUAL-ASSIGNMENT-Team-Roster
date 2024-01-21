@@ -10,7 +10,6 @@ import { createMember, updateMember } from '../api/memberData';
 const initialState = {
   description: '',
   image: '',
-  price: '',
   fire: false,
   name: '',
 };
