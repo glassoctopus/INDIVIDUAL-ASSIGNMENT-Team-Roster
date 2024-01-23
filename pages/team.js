@@ -15,7 +15,6 @@ function Home() {
   const getAllTheMembers = () => {
     getMembers(user.uid).then((MembersData) => {
       setMembers(MembersData);
-      console.warn(user.uid);
     });
   };
 
