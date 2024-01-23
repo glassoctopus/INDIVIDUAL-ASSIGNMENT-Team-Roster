@@ -37,7 +37,7 @@ function Home() {
         {members.map((member) => (
           <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
         ))}
-        </div>
+      </div>
     </div>
   );
 }
