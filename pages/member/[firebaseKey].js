@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getSingleMember } from '../api/memberData';
+import { getSingleMember } from '../../api/memberData';
 
 export default function ViewMember() {
   const [memberDetails, setMemberDetails] = useState({});
