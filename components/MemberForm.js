@@ -41,7 +41,7 @@ function MemberForm({ obj }) {
       createMember(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateMember(patchPayload).then(() => {
-          router.push('/');
+          router.push('/team.js');
         });
       });
     }
