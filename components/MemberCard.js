@@ -24,7 +24,7 @@ function MemberCard({ memberObj, onUpdate }) {
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE member DETAILS  */}
-        <Link href={`/member/edit/${memberObj.firebaseKey}`} passHref>
+        <Link href={`/edit/${memberObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisMember} className="m-2">
