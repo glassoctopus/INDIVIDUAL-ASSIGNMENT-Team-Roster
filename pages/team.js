@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { getMembers } from '../api/memberData';
-// import MemberCard from '../components/MemberCard';
+import MemberCard from '../components/MemberCard';
 
 function Home() {
   const [members, setMembers] = useState([]);
@@ -15,6 +15,7 @@ function Home() {
   const getAllTheMembers = () => {
     getMembers(user.uid).then((MembersData) => {
       setMembers(MembersData);
+      console.warn(user.uid);
     });
   };
 
@@ -30,6 +31,13 @@ function Home() {
         <Button>Add A Member</Button>
       </Link>
       <h2>{members ? 'Members loaded' : 'No Members'}</h2>
+      <h3>{}</h3>
+      <div className="d-flex flex-wrap">
+        {/* TODO: map over books here using BookCard component */}
+        {members.map((member) => (
+          <MemberCard key={member.firebaseKey} memberObj={member} onUpdate={getAllTheMembers} />
+        ))}
+        </div>
     </div>
   );
 }

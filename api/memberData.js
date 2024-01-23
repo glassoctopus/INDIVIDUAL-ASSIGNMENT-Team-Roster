@@ -69,23 +69,23 @@ const updateMember = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getMembersByTeam = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/members.json?orderBy="author_id"&equalTo="${firebaseKey}"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
-    .catch(reject);
-});
+// TODO
+// const getMembersByTeam = (firebaseKey) => new Promise((resolve, reject) => {
+//   fetch(`${endpoint}/members.json?orderBy="Team_id"&equalTo="${firebaseKey}"`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   })
+//     .then((response) => response.json())
+//     .then((data) => resolve(Object.values(data)))
+//     .catch(reject);
+// });
 
 export {
   getMembers,
   createMember,
   deleteMember,
   getSingleMember,
-  getMembersByTeam,
   updateMember,
 };
